@@ -1,0 +1,32 @@
+<div class="container bg-light py-5" style="align-items: center; font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: #e3f2fd;;" >
+    <h1 class="display-5 fw-bold" style="color: rgb(12, 45, 105); text-align: center;">Welcome to <span style="font-family: cursive; color: rgb(12, 45, 105);">TechnologyQUIZ</span></h1><br><br>
+    <p class="col-md-8 fs-4">This quiz will contains 5 questions. Each question holds 10 points</p>
+    <h4 style="margin-left: 20px;">Rules: </h4>
+    <ul>
+        <li>Correct questions gives you 10 points</li>
+        <li>Incorrect questions gives you -10 points</li>
+        <li>You will have 60 seconds to answer each questions</li>
+        <li>Refreshing the page will reset the Quiz</li>
+    </ul>
+    <br><br>
+    <h2 style="text-align: center; font-family: 'Courier New', Courier, monospace;">All the Best!!</h2>
+<div class="name col-md-4 my-3">
+    <form [formGroup]="username" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+    <label>Enter User Name</label>
+    <input #name type="text" formControlName="name" class="form-control"
+    [ngClass]="{'is-invalid':submitted && f['name'].errors}">
+    <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+    <div *ngIf="f['name'].errors['required']">
+    User Name can not be empty
+    </div>
+    </div>
+    </div><br>
+    <div class="form-group">
+    <button class="btn btn-primary">StartQuiz</button>
+    </div>
+    <!-- <button [disabled]="username.invalid" class="btn btn-primary btn-lg" (click)="startQuiz('/question')">StartQuiz</button> -->
+    </form>
+    </div>
+<!-- <button  class="btn btn-primary btn-lg" routerLink="/main" (click)="startTest()">Start The Test</button> 
+</div> -->
